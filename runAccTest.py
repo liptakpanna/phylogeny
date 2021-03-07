@@ -28,7 +28,8 @@ def acc(topo, policy):
 
     avg_return = total_return / db
     
-    log.logging("Topo: %s result: %s", topo, str(avg_return.numpy()[0]))
+    text = "Topo: "+topo+" result: "+ str(avg_return.numpy()[0])
+    log.loggingAcc(text)
 
     if max == 0.0:
         print(avg_return.numpy()[0])
