@@ -53,8 +53,8 @@ class PhylogenyEnv(py_environment.PyEnvironment):
             end = '.csv'
             mid = 'distances'
         path = ""
-        firstBreak = int(self.setSize*balProportion)
-        secondBreak = int(self.setSize*(balProportion+pecProportion))
+        firstBreak = int(self.setSize*self.balProportion)
+        secondBreak = int(self.setSize*(self.balProportion+self.pecProportion))
         if self._i <= firstBreak:
             path = "train_set/"+mid+"/balanced/dist"+str(int(self._i))+end
         elif self._i <= secondBreak:
