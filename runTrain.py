@@ -167,7 +167,7 @@ def run(discount = 0.95, size=100, balP = 0.25, pecP = 0.25):
     out = out[:-2] + "]"
     print(out)
 
-    text = "Size: "+size+" discount: "+discount+" result: "+out
+    text = "Size: "+str(size)+" discount: "+str(discount)+" result: "+out
     log.logging(text)
 
     return out
@@ -288,7 +288,7 @@ def runForAcc(discount = 0.95, size=100, balP = 0.25, pecP = 0.25):
     out = out[:-2] + "]"
     print(out)
 
-    text = "FOR ACCURACY Size: "+size+" discount: "+discount+" result: "+out
+    text = "FOR ACCURACY Size: "+str(size)+" discount: "+str(discount)+" result: "+out
     log.logging(text)
 
     return agent.policy
