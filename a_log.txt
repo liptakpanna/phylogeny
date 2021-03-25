@@ -1,2 +1,14 @@
 LOGS
 
+2021-03-17 23:49:38.461393,  Topo: pectinate result: 6.300001.
+2021-03-17 23:49:40.627710,  Topo: balanced result: 5.4666667.
+2021-03-17 23:49:42.784920,  Topo: random result: 5.366666.
+2021-03-19 04:51:15.037173,  Topo: pectinate result: 6.2333336.
+2021-03-19 04:51:17.698158,  Topo: balanced result: 7.666667.
+2021-03-19 04:51:20.030894,  Topo: random result: 6.1000013.
+2021-03-23 14:30:01.922170,  Topo: pectinate result: 5.7333336.
+2021-03-23 14:30:03.947197,  Topo: balanced result: 7.833334.
+2021-03-23 14:30:06.010527,  Topo: random result: 6.366668.
+2021-03-24 10:30:15.505242,  Topo: pectinate result: 5.566667.
+2021-03-24 10:30:17.371188,  Topo: balanced result: 6.9666667.
+2021-03-24 10:30:19.224907,  Topo: random result: 5.3666673.
