@@ -1,6 +1,20 @@
 import runTrain
 import runAccTest
+import time
+import dendropy
 
+tns = dendropy.TaxonNamespace()
+start_time = time.time()
+for i in range(1,100):
+  pdm = dendropy.PhylogeneticDistanceMatrix.from_csv(
+        src=open("test_set/distances/random/dist"+str(i+1) +".csv"),
+        delimiter=",")
+  tree = pdm.nj_tree()
+
+print("--- %s seconds ---" % (time.time() - start_time))
+
+
+'''
 discount = 0.95
 sizes = [100,200,300]
 balP = [0.1,0.2]
@@ -14,7 +28,7 @@ for s in sizes:
             runAccTest.acc("balanced", policy)
             runAccTest.acc("random", policy)
 
-'''
+
 discounts = [0.05,0.5,0.75,0.95]
 sizes = [100,200,300,400,500]
 for s in sizes:
