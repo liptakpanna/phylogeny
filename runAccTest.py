@@ -5,7 +5,7 @@ import numpy
 import evalEnv
 import log
 
-def acc(topo, policy):
+def acc(topo, policy, size, discount, b ,p):
     acc_py_env = evalEnv.PhylogenyEvalEnv(topo)
     acc_env = tf_py_environment.TFPyEnvironment(acc_py_env)
 
@@ -28,7 +28,7 @@ def acc(topo, policy):
 
     avg_return = total_return / db
     
-    text = "Topo: "+topo+" result: "+ str(avg_return.numpy()[0])
+    text = "Topo: "+topo+" size: "+size+ " discount: "+ discount + " balp: " + b + " pecp:" + p +" result: "+ str(avg_return.numpy()[0])
     log.loggingAcc(text)
 
     if max == 0.0:

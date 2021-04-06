@@ -1,3 +1,6 @@
 env/
 main/
 key/
+__pycache__/
+_pycache_/
+.vscode/

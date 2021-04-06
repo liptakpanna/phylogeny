@@ -1,18 +1,30 @@
 import runTrain
 import runAccTest
-import time
-import dendropy
+import sys
 
-tns = dendropy.TaxonNamespace()
-start_time = time.time()
-for i in range(1,100):
-  pdm = dendropy.PhylogeneticDistanceMatrix.from_csv(
-        src=open("test_set/distances/random/dist"+str(i+1) +".csv"),
-        delimiter=",")
-  tree = pdm.nj_tree()
+sizes = [100,200,300,400,500]
 
-print("--- %s seconds ---" % (time.time() - start_time))
-
+version = (sys.argv[1])
+if(version == "1"):
+    print("Running discount 0.05 tests")
+    d = 0.05
+    for s in sizes:
+        result = runTrain.run(d, s, 0.25, 0.25)
+elif(version == "2"):
+    print("Running discount 0.5 tests")
+    d = 0.5
+    for s in sizes:
+        result = runTrain.run(d, s, 0.25, 0.25)
+elif(version == "3"):
+    print("Running discount 0.75 tests")
+    d = 0.75
+    for s in sizes:
+        result = runTrain.run(d, s, 0.25, 0.25)
+elif(version == "4"):
+    print("Running discount 0.95 tests")
+    d = 0.95
+    for s in sizes:
+        result = runTrain.run(d, s, 0.25, 0.25)
 
 '''
 discount = 0.95
@@ -24,9 +36,9 @@ for s in sizes:
     for b in balP:
         for p in pecP:
             policy = runTrain.runForAcc(discount,s, b, p)
-            runAccTest.acc("pectinate", policy)
-            runAccTest.acc("balanced", policy)
-            runAccTest.acc("random", policy)
+            runAccTest.acc("pectinate", policy, s, d , b ,p)
+            runAccTest.acc("balanced", policy, s, d , b ,p)
+            runAccTest.acc("random", policy, s, d , b ,p)
 
 
 discounts = [0.05,0.5,0.75,0.95]
@@ -37,7 +49,7 @@ for s in sizes:
 
 
 policy = runTrain.runForAcc(0.95,100, 0.25, 0.25)
-runAccTest.acc("pectinate", policy)
-runAccTest.acc("balanced", policy)
-runAccTest.acc("random", policy)
+runAccTest.acc("pectinate", policy, s, d , b ,p)
+runAccTest.acc("balanced", policy, s, d , b ,p)
+runAccTest.acc("random", policy, s, d , b ,p)
 '''
