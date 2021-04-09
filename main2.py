@@ -3,7 +3,7 @@ import runAccTest
 import sys
 
 discount = 0.95
-sizes = [100, 300]
+sizes = [300, 500]
 balP = [0.1,0.2]
 pecP = [0.4,0.3]
 
