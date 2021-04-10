@@ -28,7 +28,7 @@ def acc(topo, policy, size, discount, b ,p):
 
     avg_return = total_return / db
     
-    text = "Topo: "+topo+" size: "+size+ " discount: "+ discount + " balp: " + b + " pecp:" + p +" result: "+ str(avg_return.numpy()[0])
+    text = "Topo: "+str(topo)+" size: "+str(size)+ " discount: "+ str(discount) + " balp: " + str(b) + " pecp:" + str(p) +" result: "+ str(avg_return.numpy()[0])
     log.loggingAcc(text)
 
     if max == 0.0:
