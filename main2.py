@@ -31,6 +31,6 @@ elif(version == "5"):
 
 for s in sizes:
         policy = runTrain.runForAcc(discount,s, balP, pecP)
-        runAccTest.acc("pectinate", policy)
-        runAccTest.acc("balanced", policy)
-        runAccTest.acc("random", policy)
+        runAccTest.acc("pectinate", policy, s ,discount, balP ,pecP)
+        runAccTest.acc("balanced", policy, s ,discount, balP ,pecP)
+        runAccTest.acc("random", policy, s ,discount, balP ,pecP)
