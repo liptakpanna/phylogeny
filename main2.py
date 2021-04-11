@@ -2,6 +2,12 @@ import runTrain
 import runAccTest
 import sys
 
+policy = runTrain.runForAcc(0.95,500, 0.1, 0.4)
+runAccTest.acc("pectinate", policy, 500 ,0.95, 0.1, 0.4)
+runAccTest.acc("balanced", policy, 500 ,0.95, 0.1, 0.4)
+runAccTest.acc("random", policy, 500 ,0.95, 0.1, 0.4)
+
+'''
 discount = 0.95
 sizes = [300, 500]
 balP = [0.1,0.2]
@@ -34,3 +40,4 @@ for s in sizes:
         runAccTest.acc("pectinate", policy, s ,discount, balP ,pecP)
         runAccTest.acc("balanced", policy, s ,discount, balP ,pecP)
         runAccTest.acc("random", policy, s ,discount, balP ,pecP)
+'''

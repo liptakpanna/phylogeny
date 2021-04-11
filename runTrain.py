@@ -174,7 +174,7 @@ def run(discount = 0.95, size=100, balP = 0.25, pecP = 0.25):
 
 def runForAcc(discount = 0.95, size=100, balP = 0.25, pecP = 0.25):
     # How long should training run?
-    num_iterations = size*10*10
+    num_iterations = 100000
     print(num_iterations)
     # How many initial random steps, before training start, to
     # collect initial data.
