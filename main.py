@@ -1,5 +1,8 @@
 import runTrain
 import runAccTest
+import sarichEnv
+
+x = sarichEnv.SarichEnv()
 
 discount = 0.95
 s = 500
