@@ -3,7 +3,7 @@ from __future__ import division
 from __future__ import print_function
 
 import abc
-import tensorflow as tf # pylint: disable=g-explicit-tensorflow-version-import
+import tensorflow as tf
 
 tf.compat.v1.enable_eager_execution()
 
@@ -25,7 +25,7 @@ from random import randint
 import dendropy
 from dendropy.calculate import treecompare
 
-class PhylogenyEvalEnv(py_environment.PyEnvironment):
+class SarichEnv(py_environment.PyEnvironment):
     def getStateFromCSV(self):
         path = self.getPath(False)
         
@@ -48,19 +48,15 @@ class PhylogenyEvalEnv(py_environment.PyEnvironment):
     def getPath(self,isTree):
         if isTree:
             end = '.tre'
-            mid = 'trees'
         else:
             end = '.csv'
-            mid = 'distances'
-        path = "test_set/"+mid+"/"+self.topo+"/dist"+str(self._i)+end
+        path = "sarich/sarich"+end
         return path
   
-    def __init__(self, topo, discount = 0.95):
+    def __init__(self, discount = 0.95):
         self.discount = discount
-        self.topo = topo
         seed(1)
         self._tns = dendropy.TaxonNamespace()
-        self._i = 1
         self._state, self._labels, self._n = self.getStateFromCSV()
         self._maxstate = int(self._n*(self._n-1)/2)
         self._action_spec = array_spec.BoundedArraySpec(
@@ -82,10 +78,6 @@ class PhylogenyEvalEnv(py_environment.PyEnvironment):
         return self._labels
 
     def _reset(self):
-        self._i = self._i+1
-        if self._i > 100:
-            self._i = 1
-
         self._state, self._labels, self._n = self.getStateFromCSV()
         self._episode_ended = False
         self._calculated_tree = ""

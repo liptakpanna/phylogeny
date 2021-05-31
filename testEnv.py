@@ -199,7 +199,7 @@ class PhylogenyEnv(py_environment.PyEnvironment):
             reward =  treecompare.symmetric_difference(self._goal_tree,tree)
           #print(treecompare.symmetric_difference(self._goal_tree,tree))
           #print(reward/maxdist*100)
-            reward = (2*(6-3)-reward)/(2*(6-3))*10
+            reward = (3*self._n-6-reward)/(3*self._n-6)*10
           #print(reward)
             return ts.termination(np.array([self._state], dtype=np.int32), reward)
         else:
