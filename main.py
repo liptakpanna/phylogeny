@@ -2,17 +2,16 @@ import runTrain
 import runAccTest
 
 discount = 0.95
-sizes = [100,200,300]
-balP = [0.1,0.2]
-pecP = [0.4,0.3]
+s = 500
+b = 0.1
+p = 0.4
 
-for s in sizes:
-    for b in balP:
-        for p in pecP:
-            policy = runTrain.runForAcc(discount,s, b, p)
-            runAccTest.acc("pectinate", policy)
-            runAccTest.acc("balanced", policy)
-            runAccTest.acc("random", policy)
+policy = runTrain.runForAcc(discount,s, b, p)
+runAccTest.acc("pectinate", policy)
+runAccTest.acc("balanced", policy)
+runAccTest.acc("random", policy)
+
+runAccTest.sarichEnv(policy)
 
 '''
 discounts = [0.05,0.5,0.75,0.95]
