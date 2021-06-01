@@ -14,7 +14,7 @@ runAccTest.acc("pectinate", policy)
 runAccTest.acc("balanced", policy)
 runAccTest.acc("random", policy)
 
-runAccTest.sarichEnv(policy)
+runAccTest.sarichAcc(policy)
 
 '''
 discounts = [0.05,0.5,0.75,0.95]
