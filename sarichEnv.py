@@ -85,7 +85,7 @@ class SarichEnv(py_environment.PyEnvironment):
         self._goal_tree = dendropy.Tree.get(path=self.getPath(True), schema = "newick", taxon_namespace = self._tns)
         return ts.restart(np.array([self._state], dtype=np.int32))
 
-    def addNodeToTree(self, first_node, second_node, ):
+    def addNodeToTree(self, first_node, second_node ):
         firstPiece = ""
         secondPiece = ""
         if len(self._tree_pieces) == 0: self._tree_pieces.append("("+first_node+","+second_node+")")
@@ -106,9 +106,6 @@ class SarichEnv(py_environment.PyEnvironment):
                 self._tree_pieces.remove(secondPiece)
                 self._tree_pieces.append("("+secondPiece+","+firstPiece+")")
             else:
-                print(firstPiece)
-                print(secondPiece)
-                print(self._tree_pieces)
                 self._tree_pieces.remove(firstPiece)
                 self._tree_pieces.remove(secondPiece)
                 self._tree_pieces.append("("+firstPiece+","+secondPiece+")")

@@ -1,17 +1,19 @@
 import runTrain
 import runAccTest
 
+from tf_agents.environments import tf_py_environment
 import sarichEnv
 
 acc_py_env = sarichEnv.SarichEnv()
 acc_env = tf_py_environment.TFPyEnvironment(acc_py_env)
 environment = acc_env
 
+time_step = environment.reset()
 i = 0
 while not time_step.is_last():
     action_step = i
     i = i+1
-    time_step = environment.step(action_step.action)
+    time_step = environment.step(action_step)
 
 '''
 discount = 0.95
