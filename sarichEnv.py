@@ -106,6 +106,9 @@ class SarichEnv(py_environment.PyEnvironment):
                 self._tree_pieces.remove(secondPiece)
                 self._tree_pieces.append("("+secondPiece+","+firstPiece+")")
             else:
+                print(firstPiece)
+                print(secondPiece)
+                print(self._tree_pieces)
                 self._tree_pieces.remove(firstPiece)
                 self._tree_pieces.remove(secondPiece)
                 self._tree_pieces.append("("+firstPiece+","+secondPiece+")")
